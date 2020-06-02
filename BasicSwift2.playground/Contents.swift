@@ -48,7 +48,7 @@ var characters = Array("Hello")
 print(characters)
 
 //array slice
-let names = ["manny", "moe", "jack"]
+let names = ["manny", "moe", "jack", "kar"]
 let slice = names[1...2] // ["moe", "jack"]
 print(slice[1])
 
@@ -72,18 +72,21 @@ print("students = \(students)")
 var studentGrades:[String: Float] = [:]
 print("studentGrades = \(studentGrades)")
 
-var data = ["name": "arenasharing", "goal": "sharing"]
+var data = ["blogName": "arenasharing", "goal": "sharing"]
 
-//untuk mengambil data
-let name = data["name"]
-//untuk menambah data
+//get data from dictionary
+let name = data["blogName"]
+
+//add data to dictionary
 data["extension"] = ".com"
-data["goal"] = "co.id"
-data["gal"] = "test"
-data["name"] = "coba duplicate"
+data["goal"] = "Sharing about ios"
+data["writer"] = "admin"
+
+//update value from a specific key
+data["blogName"] = "try duplicate name"
 print("data dictionary = \(data)")
-data["gal"] = nil
-print("data dictionary remove = \(data)")
+data["writer"] = nil
+print("data dictionary after remove = \(data)")
 
 //get all keys and values
 let keys = [String](data.keys)
@@ -93,7 +96,7 @@ values.sorted()
 
 // create dictionary with two array
 var cities = ["Japan", "Bangalore", "Hyderabad", "Jakarta", "Holand", "Paris"]
-var distance = [400, 10, 620, 15, 150, 500]
+var distance = [400, 10, 620, 15, 150, 500, 11]
 
 var cityDistanceDict = Dictionary(uniqueKeysWithValues: zip(cities, distance))
 print("cityDistanceDict = \(cityDistanceDict)")
@@ -108,9 +111,14 @@ print("groupingCities = \(groupingCities)")
 
 /*--------- SET ----------*/
 
+// initialize empty set
+var sizes = Set<Int>()
+
+// initialize with values
 var grades: Set = [55,90,20,45,23,88,44,69]
 print("grades.isEmpty = \(grades.isEmpty)")
 print("grades.count = \(grades.count)")
+
 grades.insert(11)
 print("grades after insert = \(grades)")
 grades.remove(11)
